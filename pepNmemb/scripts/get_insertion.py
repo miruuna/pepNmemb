@@ -6,8 +6,7 @@ import numpy as np
 import pandas as pd
 from scipy.spatial import KDTree
 
-from pepNmemb.core.classes import Peptide
-
+from classes import Peptide
 
 def get_index_shortest_distance(
     point_p: np.ndarray, b: np.ndarray
@@ -169,7 +168,7 @@ def get_peptide_insertion(
     df["Residue"] = df["Residue"].astype("str")
     df["Time (ns)"] = df["Time (ns)"].astype(float) / 1000
     df["Time (ns)"] = df["Time (ns)"].astype(int)
-    df.to_csv(f"insertion_{peptide.pep_name}_insertion_curv_100.csv")
+    df.to_csv(f"pepNmemb/data/insertion_{peptide.pep_name}_insertion_curv.csv")
 
     return df
 

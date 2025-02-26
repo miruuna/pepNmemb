@@ -3,7 +3,7 @@ import numpy as np
 from unittest.mock import patch, MagicMock
 
 from pepNmemb.scripts.get_insertion import get_index_shortest_distance, get_closest_lipid_z
-from pepNmemb.core.classes import Peptide
+from pepNmemb.scripts.classes import Peptide
 
 class TestGetIndexShortestDistance(unittest.TestCase):
     
