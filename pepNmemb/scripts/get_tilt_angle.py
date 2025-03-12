@@ -136,6 +136,7 @@ def relative_tilt(obj, membrane_lipids: int) -> pd.DataFrame:
                 if len(pep_coords) == 0 or len(pep_coords) > 1:
                     angle_list.append((timecount1, pep, None, len(pep_coords)))
                     continue
+
                 points = Points(pep_coords[0])
 
                 line_fit = Line.best_fit(points)
@@ -162,7 +163,7 @@ def relative_tilt(obj, membrane_lipids: int) -> pd.DataFrame:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Run insertion into the membranr analysis"
+        description="Run insertion into the membrane analysis"
     )
 
     parser.add_argument("-xtc", "--xtc", type=str, help="Input xtc file path")
