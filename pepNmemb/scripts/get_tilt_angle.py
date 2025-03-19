@@ -9,13 +9,12 @@ import math as m
 
 import argparse
 
-from classes import Peptide
+from pepNmemb.scripts.classes import Peptide
 
 
 def find_consecutive_sublists(integers: List[int]) -> List[List[int]]:
     """
     Find all consecutive sublists within a list
-
     """
     if not integers:
         return []
@@ -49,7 +48,7 @@ def find_consecutive_sublists(integers: List[int]) -> List[List[int]]:
 def get_vector(
     coord1: Tuple[float, float, float], coord2: Tuple[float, float, float]
 ) -> Tuple[float, float, float]:
-    return (coord1[0] - coord2[0], coord1[0] - coord2[1], coord1[0] - coord2[2])
+    return (coord1[0] - coord2[0], coord1[1] - coord2[1], coord1[2] - coord2[2])
 
 
 def vector_length(v: Tuple[float, float, float]) -> float:
