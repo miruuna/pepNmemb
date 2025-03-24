@@ -2,6 +2,9 @@ import unittest
 import numpy as np
 from unittest.mock import patch, MagicMock
 
+import sys  
+sys.path.append("./")
+
 from pepNmemb.scripts.get_insertion import get_index_shortest_distance, get_closest_lipid_z
 from pepNmemb.scripts.classes import Peptide
 

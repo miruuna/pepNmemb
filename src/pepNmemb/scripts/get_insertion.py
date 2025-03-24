@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 from scipy.spatial import KDTree
 
-from .classes import Peptide
+from classes import Peptide
 
 def get_index_shortest_distance(
     point_p: np.ndarray, b: np.ndarray
