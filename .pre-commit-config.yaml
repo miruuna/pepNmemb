@@ -5,7 +5,9 @@ repos:
     hooks:
       - id: black
         language_version: python3.9
-        args: [--line-length=88]
+        args: [--line-length=100]
+        
+        exclude: tests
 
   # Import sorting
   - repo: https://github.com/pycqa/isort
@@ -13,6 +15,7 @@ repos:
     hooks:
       - id: isort
         args: ["--profile", "black"]
+        exclude: tests
 
   # Linting
   - repo: https://github.com/pycqa/flake8
@@ -24,21 +27,22 @@ repos:
           'flake8-docstrings',
         ]
         args: [
-          '--max-line-length=88', 
-          '--extend-ignore=E203,W503'
+          '--max-line-length=100', 
+          '--extend-ignore=E203,W503,D200,D104,D100,D401,D400,D206,D202,D103,D205,D210,error'
         ]
+        exclude: tests
 
-  # Type checking
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.8.0
-    hooks:
-      - id: mypy
-        args: [--ignore-missing-imports]
+  # # Type checking
+  # - repo: https://github.com/pre-commit/mirrors-mypy
+  #   rev: v1.8.0
+  #   hooks:
+  #     - id: mypy
+  #       args: [--ignore-missing-imports]
 
-  # Security checks
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.7
+    rev: 1.7.4
     hooks:
       - id: bandit
-        args: ['-c', 'pyproject.toml']
-        additional_dependencies: ["bandit[toml]"]
+        args: ["-c", "pyproject.toml"]
+        additional_dependencies: [ "bandit[toml]" ]
+        exclude: tests

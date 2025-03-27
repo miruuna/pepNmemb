@@ -1,16 +1,15 @@
-from tqdm import tqdm
 import argparse
-from typing import List, Tuple, Dict, Optional
+from typing import Optional, Tuple
 
 import numpy as np
 import pandas as pd
 from scipy.spatial import KDTree
+from tqdm import tqdm
 
 from .classes import Peptide
 
-def get_index_shortest_distance(
-    point_p: np.ndarray, b: np.ndarray
-) -> Tuple[np.ndarray, float]:
+
+def get_index_shortest_distance(point_p: np.ndarray, b: np.ndarray) -> Tuple[np.ndarray, float]:
     """
     Finds the index of the shortest distance between a point and a set of points.
 
@@ -26,9 +25,7 @@ def get_index_shortest_distance(
     for i in range(len(b)):
         p = b[i]
         distances_array[i] = np.sqrt(
-            (point_p[1] - p[1]) ** 2
-            + (point_p[0] - p[0]) ** 2
-            + (point_p[2] - p[2]) ** 2
+            (point_p[1] - p[1]) ** 2 + (point_p[0] - p[0]) ** 2 + (point_p[2] - p[2]) ** 2
         )
     distances_array = distances_array[distances_array != 0]
 
@@ -65,6 +62,7 @@ def get_closest_lipid_z(
 
         if len(x[0]) == 0:
             continue
+
         else:
             closest_lipid_index, _ = get_index_shortest_distance(res_pos, all_up[x[0]])
             return closest_lipid_index[2]
@@ -103,9 +101,9 @@ def get_peptide_insertion(
     u = peptide.u
     z_pos_list = []
     frames, n_frames = peptide.load_traj()
-    for frame_index, ts in tqdm(enumerate(u.trajectory[frames]), total=n_frames):
-        u.select_atoms(f"resname POPG and name P").positions
-        p_memb = u.select_atoms(f"resname POPG and name P").positions
+    for _, _ in tqdm(enumerate(u.trajectory[frames]), total=n_frames):
+        u.select_atoms("resname POPG and name P").positions
+        p_memb = u.select_atoms("resname POPG and name P").positions
         p_up = np.mean(p_memb[: int(membrane_lipids / 2)])
         p_low = np.mean(p_memb[int(membrane_lipids / 2) :])
 
@@ -114,9 +112,7 @@ def get_peptide_insertion(
             for res_id in range(res_id_range[0], res_id_range[1] + 1):
                 # Calculate the z pos of each residue one at a time
                 res_z_pos = np.mean(
-                    u.select_atoms(f"name CA and resid {res_id}")
-                    .positions[:, [2]]
-                    .astype(float)
+                    u.select_atoms(f"name CA and resid {res_id}").positions[:, [2]].astype(float)
                 )
                 res_pos = u.select_atoms(f"name CA and resid {res_id}").positions
 
@@ -174,22 +170,14 @@ def get_peptide_insertion(
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Run insertion into the membranr analysis"
-    )
+    parser = argparse.ArgumentParser(description="Run insertion into the membranr analysis")
 
     parser.add_argument("-xtc", "--xtc", type=str, help="Input xtc file path")
     parser.add_argument("-tpr", "--tpr", type=str, help="Input xtpr file path")
-    parser.add_argument(
-        "-pname", "--pep_name", type=str, help="Peptide name used for saving data"
-    )
+    parser.add_argument("-pname", "--pep_name", type=str, help="Peptide name used for saving data")
     parser.add_argument("-pnum", "--pep_num", type=int, help="Number of peptides")
-    parser.add_argument(
-        "-res", "--res_num", type=int, help="Number of residues in each peptide"
-    )
-    parser.add_argument(
-        "-mlipids", "--memb_lipids", type=int, help="Number of membrane lipids"
-    )
+    parser.add_argument("-res", "--res_num", type=int, help="Number of residues in each peptide")
+    parser.add_argument("-mlipids", "--memb_lipids", type=int, help="Number of membrane lipids")
     parser.add_argument("-ss", "--step_size", type=int, help="Step size")
 
     args = parser.parse_args()
@@ -202,9 +190,7 @@ def main():
     membrane_lipids = args.memb_lipids
     step_size = args.step_size
 
-    print(
-        f"Starting analysis for peptide {peptide_name} found at {xtc_file_path}, {tpr_file_path}"
-    )
+    print(f"Starting analysis for peptide {peptide_name} found at {xtc_file_path}, {tpr_file_path}")
     get_peptide_insertion(
         peptide_name,
         aminoacid_count,
