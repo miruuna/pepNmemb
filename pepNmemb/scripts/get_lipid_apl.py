@@ -87,8 +87,7 @@ def get_area_per_lipid(
 
         # Sum area contribution of each cell for a given lipid
         lipid_apl = np.sum(
-            lipid_apl.reshape(atom_group[lipid_indices].residues.n_residues, num_seeds[res]),
-            axis=1,
+            lipid_apl.reshape(atom_group[lipid_indices].residues.n_residues, num_seeds[res]), axis=1
         )
 
         # Store area per lipid for current lipid species
@@ -134,10 +133,7 @@ def calculate_apl(path: str) -> pd.DataFrame:
 
     # Output array initialization
     all_apl = np.full(
-        (
-            len([res.resid for res in all_select]),
-            int(np.ceil(u.trajectory.n_frames / float(step))),
-        ),
+        (len([res.resid for res in all_select]), int(np.ceil(u.trajectory.n_frames / float(step)))),
         fill_value=np.NaN,
         dtype=np.float32,
     )
@@ -219,17 +215,10 @@ def calc_and_write_to_file(path: str, membrane_type: str, results_directory: str
 
 
 def main() -> None:
-    """
-    Main function to run area per lipid calculation.
-
-    Returns:
-        None
-    """
     b_dir = "path"
     output_dir = "APL"
     Path(output_dir).mkdir(parents=True, exist_ok=True)
 
-    # Add your specific path or use an environment variable
     p = b_dir  # Replace with actual path if needed
     calc_and_write_to_file(p, "pg", output_dir)
 

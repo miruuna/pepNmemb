@@ -1,9 +1,9 @@
 # Use an official Python runtime as a parent image
 FROM python:3.9-slim
 
-WORKDIR /app
+WORKDIR /pepNmemb
 
-COPY . /app
+COPY . /pepNmemb/
 
 RUN apt-get update && apt-get install -y \
     build-essential \

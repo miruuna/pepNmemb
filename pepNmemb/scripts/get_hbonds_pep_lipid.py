@@ -71,9 +71,7 @@ def hbonds_per_res(obj: Peptide, step_size: int = 500) -> pd.DataFrame:
 
 
 def main() -> None:
-    """
-    Main function to parse arguments and run hydrogen bond analysis.
-    """
+
     parser = argparse.ArgumentParser(
         description="Run hydrogen bond analysis for peptide in membrane"
     )
