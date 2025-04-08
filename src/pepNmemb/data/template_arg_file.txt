@@ -1,0 +1,7 @@
+peptide_name=
+aminoacid_count=
+peptide_number=
+membrane_lipids=
+step_size=
+xtc_file_path=
+tpr_file_path=

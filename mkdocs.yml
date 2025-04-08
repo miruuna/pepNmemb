@@ -30,7 +30,7 @@ nav:
       - example_docs/about/conduct.md
       - example_docs/about/license.md
 
-repo_url: https://github.com/Quantum-Accelerators/template/
+repo_url: https://github.com/miruuna/pepNmemb
 edit_uri: blob/main/docs/
 
 theme:

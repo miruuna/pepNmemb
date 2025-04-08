@@ -1,0 +1,8 @@
+peptide_name=pleu8
+aminoacid_count=25
+peptide_number=8
+membrane_lipids=256
+step_size=5000
+xtc_file_path=/Volumes/miru_backup/pleu_conc/pleu8/pleu8/md_0_1.xtc
+tpr_file_path=/Volumes/miru_backup/pleu_conc/pleu8/pleu8/md_0_1.tpr
+output_folder=/Volumes/miru_backup/pleu_conc/pleu8/pleu8

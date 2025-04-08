@@ -2,15 +2,16 @@
 
 import argparse
 import math as m
+import sys
 from typing import List, Tuple
 
 import MDAnalysis as mda
 import numpy as np
 import pandas as pd
+from classes import Peptide
 from skspatial.objects import Line, Points
 from tqdm import tqdm
-
-from pepNmemb.scripts.classes import Peptide
+from utils import NoneValueError, process_file, validate_dict_values
 
 
 def find_consecutive_sublists(integers: List[int]) -> List[List[int]]:
@@ -161,7 +162,7 @@ def get_coords_spanning_memb(
     return pep_coords, selected_res
 
 
-def relative_tilt(obj: Peptide, membrane_lipids: int) -> pd.DataFrame:
+def relative_tilt(obj: Peptide, membrane_lipids: int, output_folder: str) -> pd.DataFrame:
     """
     Compute relative tilt angle for the upper bilayer.
 
@@ -205,38 +206,85 @@ def relative_tilt(obj: Peptide, membrane_lipids: int) -> pd.DataFrame:
     df["Angle"] = df["Angle"].astype(float)
     df["Time (ns)"] = (df["Time (ns)"].astype(float) / 1000).astype(int)
 
-    df.to_csv(f"pepNmemb/data/tilt_angle_{peptide_name}.csv")
+    df.to_csv(f"{output_folder}/tilt_angle_{peptide_name}.csv")
     return df
 
 
-def main() -> None:
-    """
-    Main function to parse arguments and run peptide membrane analysis.
-    """
-    parser = argparse.ArgumentParser(description="Run insertion into the membrane analysis")
+def main():
+    args_dict = {}
+
+    for k in [
+        "peptide_name",
+        "aminoacid_count",
+        "peptide_number",
+        "membrane_lipids",
+        "step_size",
+        "xtc_file_path",
+        "tpr_file_path",
+    ]:
+        args_dict[k] = None
+
+    parser = argparse.ArgumentParser(
+        description="Process a file with key-value pairs or command line arguments."
+    )
+
+    # Add file argument (optional)
+    parser.add_argument("-f", "--file", help="Path to input file with key=value pairs")
 
     parser.add_argument("-xtc", "--xtc", type=str, help="Input xtc file path")
-    parser.add_argument("-tpr", "--tpr", type=str, help="Input tpr file path")
+    parser.add_argument("-tpr", "--tpr", type=str, help="Input xtpr file path")
     parser.add_argument("-pname", "--pep_name", type=str, help="Peptide name used for saving data")
     parser.add_argument("-pnum", "--pep_num", type=int, help="Number of peptides")
     parser.add_argument("-res", "--res_num", type=int, help="Number of residues in each peptide")
     parser.add_argument("-mlipids", "--memb_lipids", type=int, help="Number of membrane lipids")
     parser.add_argument("-ss", "--step_size", type=int, help="Step size")
+    parser.add_argument("-o", "--output_folder", type=int, help="Output folder")
 
     args = parser.parse_args()
 
+    if args.file:
+        file_dict = process_file(args.file)
+        args_dict.update(file_dict)
+        args_dict["step_size"] = int(args_dict["step_size"])
+        args_dict["aminoacid_count"] = int(args_dict["aminoacid_count"])
+        args_dict["membrane_lipids"] = int(args_dict["membrane_lipids"])
+        args_dict["peptide_number"] = int(args_dict["peptide_number"])
+    else:
+        args_dict["peptide_name"] = args.pep_name
+        args_dict["xtc_file_path"] = args.xtc
+        args_dict["tpr_file_path"] = args.tpr
+        args_dict["peptide_number"] = args.pep_num
+        args_dict["aminoacid_count"] = args.res_num
+        args_dict["membrane_lipids"] = args.memb_lipids
+        args_dict["step_size"] = args.step_size
+        args_dict["output_folder"] = args.output_folder
+    print(args_dict)
+    try:
+        validate_dict_values(args_dict)
+        print("All values validated successfully.")
+    except NoneValueError as e:
+        print(f"Error: {e}")
+        sys.exit(1)
+
     peptide = Peptide(
-        args.pep_name,
-        args.xtc,
-        args.tpr,
-        peptide_number=args.pep_num,
-        amino_acid_count=args.res_num,
-        step_size=args.step_size,
+        args_dict["peptide_name"],
+        args_dict["xtc_file_path"],
+        args_dict["tpr_file_path"],
+        args_dict["peptide_number"],
+        args_dict["aminoacid_count"],
+        args_dict["step_size"],
     )
 
     print(f"Starting analysis for peptide {args.pep_name} " f"found at {args.xtc}, {args.tpr}")
 
-    relative_tilt(peptide, args.memb_lipids)
+    relative_tilt(peptide, args_dict["membrane_lipids"], args_dict["output_folder"])
+
+    print(
+        f"Starting analysis for peptide {args_dict['peptide_name']} \
+            found at {args_dict['xtc_file_path']}, {args_dict['tpr_file_path']}"
+    )
+
+    print(f"File saved at {args_dict['output_folder']}")
 
 
 if __name__ == "__main__":
