@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import argparse
 import sys
 from typing import Optional, Tuple
@@ -57,9 +59,8 @@ def get_closest_lipid_z(
         if len(x[0]) == 0:
             continue
 
-        else:
-            closest_lipid_index, _ = get_index_shortest_distance(res_pos, all_up[x[0]])
-            return closest_lipid_index[2]
+        closest_lipid_index, _ = get_index_shortest_distance(res_pos, all_up[x[0]])
+        return closest_lipid_index[2]
 
 
 def get_peptide_insertion(

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import argparse
 import warnings
 from typing import List, Tuple

@@ -1,7 +1,8 @@
+from __future__ import annotations
+
 import math as m
 import sys
 import unittest
-from typing import List, Tuple
 from unittest.mock import MagicMock, patch
 
 import numpy as np
@@ -20,7 +21,6 @@ from pepNmemb.scripts.get_tilt_angle import (
 sys.path.append(".")
 
 
-from pepNmemb.scripts.classes import Peptide
 
 
 class TestConsecutiveSublists(unittest.TestCase):

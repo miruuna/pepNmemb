@@ -1,5 +1,7 @@
 """ Get angle of insertion of peptides relative to the membrane plane"""
 
+from __future__ import annotations
+
 import argparse
 import math as m
 import sys

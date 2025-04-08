@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import Any, Dict, Optional
 
 
@@ -45,7 +47,7 @@ def process_file(filename: str) -> Dict[str, str]:
     """
     key_value_dict = {}
     try:
-        with open(filename, "r") as file:
+        with open(filename) as file:
             for line_number, line in enumerate(file, 1):
                 line = line.strip()
                 if not line or line.startswith("#"):  # Skip empty lines and comments

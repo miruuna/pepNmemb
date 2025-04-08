@@ -1,0 +1,60 @@
+Metadata-Version: 2.4
+Name: pepNmemb
+Version: 0.0.1
+Summary: A python package to analyse molecular dynamics simulations of peptides in/with membranes.
+Author: Miruna S
+License: BSD-3
+Project-URL: repository, https://github.com/miruuna/pepNmemb
+Project-URL: documentation, https://github.com/miruuna/pepNmemb
+Project-URL: changelog, https://github.com/miruuna/pepNmemb/CHANGELOG.md
+Keywords: pepNmemb
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: scikit-spatial
+Requires-Dist: biopython
+Requires-Dist: matplotlib
+Requires-Dist: MDAnalysis
+Requires-Dist: networkx
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Requires-Dist: scipy
+Requires-Dist: tqdm
+Requires-Dist: seaborn
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4.0; extra == "dev"
+Requires-Dist: pytest-cov>=3.0.0; extra == "dev"
+Requires-Dist: ruff>=0.0.285; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: mkdocs-material>=9.4.0; extra == "docs"
+Requires-Dist: mkdocstrings[python]>=0.22.0; extra == "docs"
+Requires-Dist: mkdocs-gen-files>=0.5.0; extra == "docs"
+Requires-Dist: mkdocs-literate-nav>=0.6.0; extra == "docs"
+Requires-Dist: pillow>=10.0.0; extra == "docs"
+Requires-Dist: cairosvg>=2.7.1; extra == "docs"
+Dynamic: license-file
+
+# pepNmemb
+
+*pepNmemb* allows you to analyse the interactions of peptides with bacterial membranes from molecular dynamics simulations.
+
+Current functionalities:
+- calculate peptide insertion into the membrane over time
+- hydrogen bonds with the membrane and other peptides
+- inter-peptide interactions
+- peptide tilt angle
+- membrane lipid apl
+

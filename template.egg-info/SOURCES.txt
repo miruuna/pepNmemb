@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+template.egg-info/PKG-INFO
+template.egg-info/SOURCES.txt
+template.egg-info/dependency_links.txt
+template.egg-info/requires.txt
+template.egg-info/top_level.txt
+tests/TestPeptide.py
+tests/__init__.py
+tests/test_get_insertion.py
+tests/test_get_tilt_angle.py

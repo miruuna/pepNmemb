@@ -3,6 +3,8 @@ Compute Lipid APL using Voronoi Tesselation
 
 """
 
+from __future__ import annotations
+
 import os
 from pathlib import Path
 from typing import Dict, List, Tuple, Union
@@ -134,7 +136,7 @@ def calculate_apl(path: str) -> pd.DataFrame:
     # Output array initialization
     all_apl = np.full(
         (len([res.resid for res in all_select]), int(np.ceil(u.trajectory.n_frames / float(step)))),
-        fill_value=np.NaN,
+        fill_value=np.nan,
         dtype=np.float32,
     )
 
@@ -211,7 +213,7 @@ def calc_and_write_to_file(path: str, membrane_type: str, results_directory: str
     else:
         print("Invalid path provided")
 
-    return None
+    return
 
 
 def main() -> None:

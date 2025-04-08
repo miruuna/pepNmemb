@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import sys
 import unittest
 from unittest.mock import MagicMock, patch
@@ -6,7 +8,6 @@ import numpy as np
 
 sys.path.append("./")
 
-from pepNmemb.scripts.classes import Peptide
 from pepNmemb.scripts.get_insertion import (
     get_closest_lipid_z,
     get_index_shortest_distance,
@@ -126,7 +127,7 @@ class TestGetClosestLipidZ(unittest.TestCase):
 
             # Mock the get_index_shortest_distance function
             with patch(
-                f"pepNmemb.scripts.get_insertion.get_index_shortest_distance"
+                "pepNmemb.scripts.get_insertion.get_index_shortest_distance"
             ) as mock_get_index:
                 mock_get_index.return_value = (lipids[0], 0.0)
 

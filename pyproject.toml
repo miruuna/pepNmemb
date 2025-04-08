@@ -3,7 +3,7 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "template"
+name = "pepNmemb"
 description="A python package to analyse molecular dynamics simulations of peptides in/with membranes."
 version = "0.0.1"
 readme = "README.md"
@@ -49,7 +49,7 @@ changelog = "https://github.com/miruuna/pepNmemb/CHANGELOG.md"
 template = ["py.typed"]
 
 [tool.pyright]
-include = ["template"]
+include = ["pepNmemb"]
 exclude = ["**/__pycache__"]
 
 [tool.pytest.ini_options]
@@ -136,7 +136,7 @@ lint.unfixable = [
   "F841", # Removes unused variables
 ]
 lint.pydocstyle.convention = "numpy"
-lint.isort.known-first-party = ["template"]
+lint.isort.known-first-party = ["pepNmemb"]
 lint.isort.required-imports = ["from __future__ import annotations"]
 lint.isort.split-on-trailing-comma=false
 extend-include = ["*.ipynb"]
