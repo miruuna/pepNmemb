@@ -4,4 +4,4 @@
 
 ### Added
 
-- The initial release!
+- The initial release
