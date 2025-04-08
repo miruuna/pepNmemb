@@ -33,7 +33,7 @@ jobs:
     name: >-
       Publish Python 🐍 distribution 📦 to PyPI
     if: github.repository_owner == 'miruuna'
-    # if: startsWith(github.ref, 'refs/tags/')  # only publish to PyPI on tag pushes
+    ## if: startsWith(github.ref, 'refs/tags/')  # only publish to PyPI on tag pushes
     needs:
     - build
     runs-on: ubuntu-latest
