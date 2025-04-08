@@ -10,10 +10,11 @@ from typing import List, Tuple
 import MDAnalysis as mda
 import numpy as np
 import pandas as pd
-from classes import Peptide
 from skspatial.objects import Line, Points
 from tqdm import tqdm
-from utils import NoneValueError, process_file, validate_dict_values
+
+from .classes import Peptide
+from .utils import NoneValueError, process_file, validate_dict_values
 
 
 def find_consecutive_sublists(integers: List[int]) -> List[List[int]]:

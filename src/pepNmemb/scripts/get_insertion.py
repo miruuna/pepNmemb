@@ -7,9 +7,10 @@ from typing import Optional, Tuple
 import numpy as np
 import pandas as pd
 from classes import Peptide
-from scipy.spatial import KDTree
 from tqdm import tqdm
-from utils import NoneValueError, process_file, validate_dict_values
+
+from .scipy.spatial import KDTree
+from .utils import NoneValueError, process_file, validate_dict_values
 
 
 def get_index_shortest_distance(point_p: np.ndarray, b: np.ndarray) -> Tuple[np.ndarray, float]:

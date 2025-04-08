@@ -8,7 +8,7 @@ import numpy as np
 
 sys.path.append("./")
 
-from pepNmemb.scripts.get_insertion import (
+from src.pepNmemb.scripts.get_insertion import (
     get_closest_lipid_z,
     get_index_shortest_distance,
 )

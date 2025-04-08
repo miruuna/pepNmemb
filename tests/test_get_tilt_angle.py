@@ -8,7 +8,7 @@ from unittest.mock import MagicMock, patch
 import numpy as np
 import pandas as pd
 
-from pepNmemb.scripts.get_tilt_angle import (
+from src.pepNmemb.scripts.get_tilt_angle import (
     angle_between_vectors,
     dot,
     find_consecutive_sublists,
@@ -156,7 +156,7 @@ class TestRelativeTilt(unittest.TestCase):
 
         # Mock get_coords_spanning_memb
         with patch(
-            "scripts.get_tilt_angle.get_coords_spanning_memb"
+            "src.pepNmemb.scripts.get_tilt_angle.get_coords_spanning_memb"
         ) as mock_get_coords:
             # Return some coordinates for a peptide that spans the membrane
             mock_get_coords.return_value = (
@@ -173,7 +173,7 @@ class TestRelativeTilt(unittest.TestCase):
 
                 # Mock DataFrame.to_csv
                 with patch("pandas.DataFrame.to_csv") as mock_to_csv:
-                    result = relative_tilt(mock_peptide, 2)  # 2 membrane lipids
+                    result = relative_tilt(mock_peptide, 2, "output_folder")  # 2 membrane lipids
 
                     # Check if the result is a DataFrame with expected columns
                     self.assertIsInstance(result, pd.DataFrame)
