@@ -25,11 +25,7 @@ def get_interactions(obj):
                         selection1 = u.select_atoms("resid %s" % res).center_of_mass()
                         selection2 = u.select_atoms("resid %s" % res2).center_of_mass()
                         dist = distance_array(
-                            selection1,
-                            selection2,
-                            box=u.dimensions,
-                            result=None,
-                            backend="serial",
+                            selection1, selection2, box=u.dimensions, result=None, backend="serial"
                         )
                         min_dist = dist
                         all_list.append(
@@ -45,8 +41,7 @@ def get_interactions(obj):
             pair_done.append((pep, pep2))
 
     df = pd.DataFrame(
-        all_list,
-        columns=["Res1", "Res2", "Peptide1", "Peptide2", "mindist", "Time(ns)"],
+        all_list, columns=["Res1", "Res2", "Peptide1", "Peptide2", "mindist", "Time(ns)"]
     )
     df.to_csv(f"pepNmemb/data/interactions_{obj_name}.csv")
     return df

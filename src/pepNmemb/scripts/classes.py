@@ -37,12 +37,7 @@ class Peptide:
             RuntimeError: If there's an error loading the MDAnalysis Universe.
         """
         self._validate_inputs(
-            pep_name,
-            xtc_file_path,
-            tpr_file_path,
-            peptide_number,
-            amino_acid_count,
-            step_size,
+            pep_name, xtc_file_path, tpr_file_path, peptide_number, amino_acid_count, step_size
         )
 
         self.xtc_file_path = xtc_file_path

@@ -49,14 +49,7 @@ def get_closest_lipid_z(
     all_up = lipids
     kdtree = KDTree(lipids)
 
-    for radius in [
-        (float(p_up) - float(p_low)) / 2,
-        (float(p_up) - float(p_low)),
-        20,
-        40,
-        80,
-        120,
-    ]:
+    for radius in [(float(p_up) - float(p_low)) / 2, (float(p_up) - float(p_low)), 20, 40, 80, 120]:
 
         x = kdtree.query_ball_point(res_pos, radius, return_sorted=True)
 
