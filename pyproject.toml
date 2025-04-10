@@ -58,6 +58,8 @@ addopts = ["-p no:warnings", "--import-mode=importlib"]
 xfail_strict = true
 log_cli_level = "warn"
 pythonpath = "src"
+testpaths = ["tests"]
+
 
 [tool.black]
 exclude = '''
