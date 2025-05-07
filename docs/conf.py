@@ -1,14 +1,12 @@
 from __future__ import annotations
 
-import pepNmemb
+import importlib.metadata
 
 project = "pepNmemb"
 author = "Miruna Serian"
 year = "2025"
 copyright = f"{year}, {author}"
-# version = release = importlib.metadata.version("package")
-version = f"v{pepNmemb.__version__}"
-release = version
+version = release = importlib.metadata.version("pepNmemb")
 source_suffix = ".rst"
 master_doc = "index"
 
