@@ -12,7 +12,7 @@ fonttools @ file:///Users/runner/miniforge3/conda-bld/fonttools_1738940329223/wo
 GridDataFormats @ file:///home/conda/feedstock_root/build_artifacts/griddataformats_1734293480632/work
 gsd @ file:///Users/runner/miniforge3/conda-bld/gsd_1731506550291/work
 h5py @ file:///Users/runner/miniforge3/conda-bld/h5py_1734545474197/work
-identify==2.6.9
+identify==2.6.10
 joblib @ file:///home/conda/feedstock_root/build_artifacts/joblib_1733736026804/work
 kiwisolver @ file:///Users/runner/miniforge3/conda-bld/kiwisolver_1736908211538/work
 matplotlib==3.10.1
