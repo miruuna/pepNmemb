@@ -1,4 +1,11 @@
-# pepNmemb
+==========
+pepNmemb
+==========
+
+.. start-description
+
+**pepNmemb** A python-based toolkit to analyse peptide-membrane simulations
+
 
 Overview
 ========
@@ -19,5 +26,8 @@ Current functionalities include:
 - hydrogen bonds with the membrane and other peptides
 - inter-peptide interactions
 - peptide tilt angle
-- membrane lipid area per lipid (APL)
+- me
 
+.. note::
+
+   This project is under active development.

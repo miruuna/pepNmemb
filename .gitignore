@@ -1,2 +1,31 @@
 __pycache__/
 pepNmemb/data/*csv
+
+
+# Sphinx
+docs/_build
+
+.DS_Store
+*~
+.*.sw[po]
+.build
+.ve
+.env
+.cache
+.pytest
+.benchmarks
+.bootstrap
+.appveyor.token
+*.bak
+
+# Mypy Cache
+.mypy_cache/
+
+# IDE project files
+.project
+.pydevproject
+.idea
+.vscode
+*.iml
+*.komodoproject
+*.code-workspace
