@@ -36,10 +36,9 @@ The easiest way to install **pepNmemb** is using *pip*
 Basic Usage
 ===========
 
-Current functionalities include:
-#. peptide insertion analysis
-#. hydrogen bonds with the membrane and other peptides
-#. inter-peptide interactions
-#. peptide tilt angle
+* peptide insertion analysis
+* hydrogen bonds with the membrane and other peptides
+* inter-peptide interactions
+* peptide tilt angle
 
 
