@@ -8,8 +8,12 @@ description="A python package to analyse molecular dynamics simulations of pepti
 version = "0.0.1"
 readme = "README.md"
 license = { text = "BSD-3" }
-authors = [{ name = "Miruna S" }]
-keywords = ["pepNmemb",]
+authors = [{ name = "Miruna S", email ="mirunaserian@gmail.com"}]
+keywords = [
+      "pepNmemb",
+      "peptides", 
+      "membranes", 
+      "molecular dynamicss"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
