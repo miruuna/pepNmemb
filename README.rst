@@ -22,12 +22,6 @@ pepNmemb
     :target: https://pypi.org/project/pepNmemb
 
 
-.. |actions| image:: https://github.com/p-j-smith/lipyphilic/actions/workflows/tests.yml/badge.svg
-    :alt: GitHub Actions CI Status
-    :target: https://github.com/miruuna/pepNmemb/actions
-
-
-
 .. end-badges
 .. start-description
 
