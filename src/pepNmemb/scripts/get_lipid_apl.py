@@ -5,14 +5,12 @@ Compute Lipid APL using Voronoi Tesselation
 
 from __future__ import annotations
 
-import os
+import argparse
 from pathlib import Path
 from typing import Dict, List, Tuple, Union
 
 import freud
 import MDAnalysis as mda
-import MDAnalysis.core.groups
-import MDAnalysis.core.universe
 import numpy as np
 import pandas as pd
 
@@ -99,7 +97,7 @@ def get_area_per_lipid(
     return area_array
 
 
-def calculate_apl(path: str) -> pd.DataFrame:
+def calculate_apl(xtc_file_path: str, tpr_file_path: str) -> pd.DataFrame:
     """
     Calculate area per lipid for a given molecular dynamics trajectory.
 
@@ -119,7 +117,7 @@ def calculate_apl(path: str) -> pd.DataFrame:
     )
 
     # Load universe
-    u = mda.Universe(f"{path}/md_0_1.tpr", f"{path}/md_0_1_combined_first500ns_pbc.xtc")
+    u = mda.Universe(tpr_file_path, xtc_file_path)
 
     # Determine unique lipid species and Voronoi seeds
     membrane = u.select_atoms(all_lipid_sel).residues
@@ -188,41 +186,40 @@ def calculate_apl(path: str) -> pd.DataFrame:
     return df_lipid
 
 
-def calc_and_write_to_file(path: str, membrane_type: str, results_directory: str) -> None:
+def calc_and_write_to_file(
+    xtc_file_path: str, tpr_file_path: str, results_directory: str
+) -> pd.DataFrame:
     """
     Calculate area per lipid and write results to a CSV file.
 
     Args:
-        path (str): Path to molecular dynamics simulation files.
-        membrane_type (str): Type of membrane.
+        xtc_file_path (str): Path to xtc file.
+        tpr_file_path (str): Path to tpr file.
         results_directory (str): Directory to save results.
 
     Returns:
         None
     """
     Path(results_directory).mkdir(parents=True, exist_ok=True)
-    all_lipid: Dict[str, pd.DataFrame] = {}
 
-    if os.path.isdir(path):
-        peptide_name = os.path.basename(path)
-        print(f"Starting calculations for single peptide -- {peptide_name}")
-        df_lipid = calculate_apl(path)
-        df_lipid.to_csv(f"{results_directory}/apl_lipid_{peptide_name}_{membrane_type}.csv")
-        print(f"{peptide_name} --- DONE")
-        all_lipid[peptide_name] = df_lipid
-    else:
-        print("Invalid path provided")
+    df_lipid = calculate_apl(xtc_file_path, tpr_file_path)
+    df_lipid.to_csv(f"{results_directory}/apl_lipid.csv")
 
-    return
+    return df_lipid
 
 
 def main() -> None:
-    b_dir = "path"
-    output_dir = "APL"
-    Path(output_dir).mkdir(parents=True, exist_ok=True)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-xtc", "--xtc", type=str, help="Input xtc file path")
+    parser.add_argument("-tpr", "--tpr", type=str, help="Input tpr file path")
+    parser.add_argument("-o", "--output_folder", type=int, help="Output folder")
 
-    p = b_dir  # Replace with actual path if needed
-    calc_and_write_to_file(p, "pg", output_dir)
+    args = parser.parse_args()
+    xtc_file_path = args.xtc
+    tpr_file_path = args.tpr
+    output_folder = args.output_folder
+
+    calc_and_write_to_file(xtc_file_path, tpr_file_path, output_folder)
 
 
 if __name__ == "__main__":

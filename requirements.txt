@@ -1,0 +1,54 @@
+biopython @ file:///Users/runner/miniforge3/conda-bld/biopython_1737241733064/work
+cached-property @ file:///home/conda/feedstock_root/build_artifacts/cached_property_1615209429212/work
+certifi @ file:///home/conda/feedstock_root/build_artifacts/certifi_1739515848642/work/certifi
+cfgv==3.4.0
+cftime @ file:///Users/runner/miniforge3/conda-bld/cftime_1725400500264/work
+colorama @ file:///home/conda/feedstock_root/build_artifacts/colorama_1733218098505/work
+contourpy @ file:///Users/runner/miniforge3/conda-bld/contourpy_1731428353116/work
+cycler @ file:///home/conda/feedstock_root/build_artifacts/cycler_1733332471406/work
+distlib==0.3.9
+filelock @ file:///home/conda/feedstock_root/build_artifacts/filelock_1741969488311/work
+fonttools @ file:///Users/runner/miniforge3/conda-bld/fonttools_1738940329223/work
+GridDataFormats @ file:///home/conda/feedstock_root/build_artifacts/griddataformats_1734293480632/work
+gsd @ file:///Users/runner/miniforge3/conda-bld/gsd_1731506550291/work
+h5py @ file:///Users/runner/miniforge3/conda-bld/h5py_1734545474197/work
+identify==2.6.9
+joblib @ file:///home/conda/feedstock_root/build_artifacts/joblib_1733736026804/work
+kiwisolver @ file:///Users/runner/miniforge3/conda-bld/kiwisolver_1736908211538/work
+matplotlib==3.10.1
+mda_xdrlib @ file:///home/conda/feedstock_root/build_artifacts/mda-xdrlib_1734100752631/work
+MDAnalysis @ file:///Users/runner/miniforge3/conda-bld/mdanalysis_1741916403408/work
+mmtf-python @ file:///home/conda/feedstock_root/build_artifacts/mmtf-python_1657095270742/work
+mrcfile @ file:///home/conda/feedstock_root/build_artifacts/mrcfile_1737633865274/work
+msgpack @ file:///Users/runner/miniforge3/conda-bld/msgpack-python_1725975032666/work
+munkres==1.1.4
+netCDF4 @ file:///Users/runner/miniforge3/conda-bld/netcdf4_1733253630333/work
+networkx @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_networkx_1731521053/work
+nodeenv==1.9.1
+numpy @ file:///Users/runner/miniforge3/conda-bld/numpy_1742254834849/work/dist/numpy-2.2.4-cp312-cp312-macosx_10_13_x86_64.whl#sha256=2372f39a2a82db88c99a9180a56ea214161625b167a8433118c3132e031d39f1
+packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_1733203243479/work
+pandas @ file:///Users/runner/miniforge3/conda-bld/pandas_1715897629698/work
+patsy @ file:///home/conda/feedstock_root/build_artifacts/patsy_1733792384640/work
+pillow @ file:///Users/runner/miniforge3/conda-bld/pillow_1735929764289/work
+platformdirs==4.3.7
+pre_commit==4.2.0
+pyedr @ file:///home/conda/feedstock_root/build_artifacts/pyedr_1734172142114/work
+pyparsing @ file:///home/conda/feedstock_root/build_artifacts/pyparsing_1742806460251/work
+python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/python-dateutil_1733215673016/work
+pytng @ file:///Users/runner/miniforge3/conda-bld/pytng_1725408327047/work
+pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1738317518727/work
+PyYAML==6.0.2
+scikit-learn @ file:///Users/runner/miniforge3/conda-bld/scikit-learn_1736496783963/work/dist/scikit_learn-1.6.1-cp312-cp312-macosx_10_13_x86_64.whl#sha256=0a7b8f8bfd367eb107dbc11a09420ca1a4d8e263d0b5e380a45b190f689a8364
+scikit-spatial==8.1.0
+scipy @ file:///Users/runner/miniforge3/conda-bld/scipy-split_1739790672351/work/dist/scipy-1.15.2-cp312-cp312-macosx_10_13_x86_64.whl#sha256=49a892575264629624d68a6ac2cdbbf2547aedab92d64742c7c0fda1418ccafb
+seaborn @ file:///home/conda/feedstock_root/build_artifacts/seaborn-split_1733730015268/work
+setuptools==75.8.2
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1733380938961/work
+statsmodels @ file:///Users/runner/miniforge3/conda-bld/statsmodels_1727986709373/work
+threadpoolctl @ file:///home/conda/feedstock_root/build_artifacts/threadpoolctl_1741878222898/work
+tidynamics @ file:///home/conda/feedstock_root/build_artifacts/tidynamics_1689080725019/work
+tqdm @ file:///home/conda/feedstock_root/build_artifacts/tqdm_1735661334605/work
+tzdata @ file:///home/conda/feedstock_root/build_artifacts/python-tzdata_1742745135198/work
+unicodedata2 @ file:///Users/runner/miniforge3/conda-bld/unicodedata2_1736692573104/work
+virtualenv==20.29.3
+wheel==0.45.1
