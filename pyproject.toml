@@ -5,8 +5,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pepNmemb"
 description="A python package to analyse molecular dynamics simulations of peptides in/with membranes."
-version = "0.0.1"
-readme = "README.md"
+version = "0.0.2"
+readme = "README.rst"
 license = { text = "BSD-3" }
 authors = [{ name = "Miruna S", email ="mirunaserian@gmail.com"}]
 keywords = [
@@ -43,7 +43,7 @@ docs = [
 [project.urls]
 repository = "https://github.com/miruuna/pepNmemb"
 documentation = "https://github.com/miruuna/pepNmemb"
-changelog = "https://github.com/miruuna/pepNmemb/CHANGELOG.md"
+changelog = "https://github.com/miruuna/pepNmemb/blob/main/CHANGELOG.md"
 
 [tool.setuptools.package-data]
 template = ["py.typed"]
