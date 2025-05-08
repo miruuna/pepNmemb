@@ -8,6 +8,6 @@
 
 ## [0.0.2]
 
-### Added
+### Updated
 
 - Updated documentation
