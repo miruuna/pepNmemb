@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "pepNmemb"
 description="A python package to analyse molecular dynamics simulations of peptides in/with membranes."
 version = "0.0.2"
-readme = "README.ist"
+readme = "README.rst"
 license = { text = "BSD-3" }
 authors = [{ name = "Miruna S", email ="mirunaserian@gmail.com"}]
 keywords = [
