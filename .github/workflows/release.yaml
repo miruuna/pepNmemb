@@ -108,7 +108,7 @@ jobs:
 
     environment:
       name: testpypi
-      url: https://test.pypi.org/project/pepNmeb
+      url: https://test.pypi.org/project/pepNmemb
 
     permissions:
       id-token: write  # IMPORTANT: mandatory for trusted publishing
