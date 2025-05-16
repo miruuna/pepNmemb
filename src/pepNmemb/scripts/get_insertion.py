@@ -116,7 +116,7 @@ def get_peptide_insertion(
                 # Determine the actual insertion of each residue
                 pbc_crossed = (
                     1 if res_z_pos > 0 and res_z_pos < u.dimensions[2] / 2 else 0
-                )  # This assumes that peptides don't insert more than half than the membrane height
+                )  # This assumes that peptides don't insert more than half the membrane height
 
                 if pbc_crossed == 0:
                     lipid_z = get_closest_lipid_z(
