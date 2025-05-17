@@ -3,9 +3,8 @@ pepNmemb: peptides and membranes
 ========================================
 
 .. include:: ../README.rst
-   :start-after: .. start-description
-   :end-before: .. end-description
-
+   :start-after: <!-- begin-doc -->
+   :end-before: <!-- end-doc -->
 Contents
 ========
 
