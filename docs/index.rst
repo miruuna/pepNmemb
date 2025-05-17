@@ -3,13 +3,15 @@ pepNmemb: peptides and membranes
 ========================================
 
 .. include:: ../README.rst
-   :start-after: <!-- begin-doc -->
-   :end-before: <!-- end-doc -->
+   :start-after: .. start-description
+   :end-before: .. end-description
+
+
 Contents
 ========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    installation
    usage 
