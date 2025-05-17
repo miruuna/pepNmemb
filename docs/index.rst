@@ -6,14 +6,16 @@ pepNmemb: peptides and membranes
    :start-after: .. start-description
    :end-before: .. end-description
 
+
 Contents
 ========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    installation
    usage 
+   insertion
 
 modules 
 

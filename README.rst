@@ -39,9 +39,9 @@ Basic Usage
 
 Current functionalities include:
 
-* peptide insertion analysis
-* hydrogen bonds with the membrane and other peptides
-* inter-peptide interactions
-* peptide tilt angle
+* Peptide insertion analysis
+* Hydrogen bonds with the membrane and other peptides
+* Inter-peptide interactions
+* Peptide tilt angle
 
 
