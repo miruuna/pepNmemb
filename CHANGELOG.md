@@ -11,3 +11,9 @@
 ### Updated
 
 - Updated documentation
+
+## [0.0.3]
+
+### Updated
+
+- Added readthedocs
