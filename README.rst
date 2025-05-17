@@ -39,9 +39,9 @@ Basic Usage
 
 Current functionalities include:
 
-* Peptide insertion analysis.  See the :doc:`page </docs/insertion>` for more details.
-* hydrogen bonds with the membrane and other peptides
-* inter-peptide interactions
-* peptide tilt angle
+* Peptide insertion analysis
+* Hydrogen bonds with the membrane and other peptides
+* Inter-peptide interactions
+* Peptide tilt angle
 
 
