@@ -39,7 +39,7 @@ pytng @ file:///Users/runner/miniforge3/conda-bld/pytng_1725408327047/work
 pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1738317518727/work
 PyYAML==6.0.2
 scikit-learn @ file:///Users/runner/miniforge3/conda-bld/scikit-learn_1736496783963/work/dist/scikit_learn-1.6.1-cp312-cp312-macosx_10_13_x86_64.whl#sha256=0a7b8f8bfd367eb107dbc11a09420ca1a4d8e263d0b5e380a45b190f689a8364
-scikit-spatial==8.1.0
+scikit-spatial==9.0.1
 scipy @ file:///Users/runner/miniforge3/conda-bld/scipy-split_1739790672351/work/dist/scipy-1.15.2-cp312-cp312-macosx_10_13_x86_64.whl#sha256=49a892575264629624d68a6ac2cdbbf2547aedab92d64742c7c0fda1418ccafb
 seaborn @ file:///home/conda/feedstock_root/build_artifacts/seaborn-split_1733730015268/work
 setuptools==75.8.2
