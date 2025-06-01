@@ -30,7 +30,7 @@ packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_17332032
 pandas @ file:///Users/runner/miniforge3/conda-bld/pandas_1715897629698/work
 patsy @ file:///home/conda/feedstock_root/build_artifacts/patsy_1733792384640/work
 pillow @ file:///Users/runner/miniforge3/conda-bld/pillow_1735929764289/work
-platformdirs==4.3.7
+platformdirs==4.3.8
 pre_commit==4.2.0
 pyedr @ file:///home/conda/feedstock_root/build_artifacts/pyedr_1734172142114/work
 pyparsing @ file:///home/conda/feedstock_root/build_artifacts/pyparsing_1742806460251/work
