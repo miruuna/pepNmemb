@@ -42,7 +42,7 @@ scikit-learn @ file:///Users/runner/miniforge3/conda-bld/scikit-learn_1736496783
 scikit-spatial==8.1.0
 scipy @ file:///Users/runner/miniforge3/conda-bld/scipy-split_1739790672351/work/dist/scipy-1.15.2-cp312-cp312-macosx_10_13_x86_64.whl#sha256=49a892575264629624d68a6ac2cdbbf2547aedab92d64742c7c0fda1418ccafb
 seaborn @ file:///home/conda/feedstock_root/build_artifacts/seaborn-split_1733730015268/work
-setuptools==75.8.2
+setuptools==80.9.0
 six @ file:///home/conda/feedstock_root/build_artifacts/six_1733380938961/work
 statsmodels @ file:///Users/runner/miniforge3/conda-bld/statsmodels_1727986709373/work
 threadpoolctl @ file:///home/conda/feedstock_root/build_artifacts/threadpoolctl_1741878222898/work
