@@ -50,5 +50,5 @@ tidynamics @ file:///home/conda/feedstock_root/build_artifacts/tidynamics_168908
 tqdm @ file:///home/conda/feedstock_root/build_artifacts/tqdm_1735661334605/work
 tzdata @ file:///home/conda/feedstock_root/build_artifacts/python-tzdata_1742745135198/work
 unicodedata2 @ file:///Users/runner/miniforge3/conda-bld/unicodedata2_1736692573104/work
-virtualenv==20.29.3
+virtualenv==20.32.0
 wheel==0.45.1
